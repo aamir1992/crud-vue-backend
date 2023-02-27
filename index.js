@@ -21,7 +21,18 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
-app.listen(5000, () => {
+mongoose
+  .connect('mongodb+srv://aamirRage:rt4zlDVJHGXIpLqU@rage.ry9pozt.mongodb.net/?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Connected to the database!");
+}).catch(err => {
+    console.log("Cannot connect to the database!", err);
+    process.exit();
+});
+
+/* app.listen(5000, () => {
   mongoose
     .connect('mongodb+srv://aamirRage:rt4zlDVJHGXIpLqU@rage.ry9pozt.mongodb.net/?retryWrites=true&w=majority', {
       useNewUrlParser: true,
@@ -29,4 +40,4 @@ app.listen(5000, () => {
     })
     .then(console.log('connected to db'))
     .catch((err) => console.log(err))
-})
+}) */
