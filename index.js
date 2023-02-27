@@ -17,10 +17,6 @@ dotenv.config()
 
 app.use('/posts', router)
 
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
-});
-
 mongoose
   .connect('mongodb+srv://aamirRage:rt4zlDVJHGXIpLqU@rage.ry9pozt.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,

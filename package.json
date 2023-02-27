@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon index.js"
   },
-  "type": "module",
+  "type": "commonjs",
   "author": "mert",
   "license": "ISC",
   "dependencies": {
