@@ -5,13 +5,21 @@ import dotenv from 'dotenv'
 
 import router from './router/router.js'
 
+var corsOptions = {
+  origin: "https://crud-vue-frontend-ten.vercel.app"
+};
+
 const app = express()
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 
 dotenv.config()
 
 app.use('/posts', router)
+
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application." });
+});
 
 app.listen(5000, () => {
   mongoose
