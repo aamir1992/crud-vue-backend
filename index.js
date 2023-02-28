@@ -26,7 +26,7 @@ mongoose
 }).catch(err => {
     console.log("Cannot connect to the database!", err);
 });
-
+module.exports = app;
 /* app.listen(5000, () => {
   mongoose
     .connect('mongodb+srv://aamirRage:rt4zlDVJHGXIpLqU@rage.ry9pozt.mongodb.net/?retryWrites=true&w=majority', {
